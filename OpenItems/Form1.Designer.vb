@@ -23,14 +23,6 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Me.BGOI_GBP = New System.ComponentModel.BackgroundWorker
-        Me.BGOI_L7P = New System.ComponentModel.BackgroundWorker
-        Me.BGOI_L6P = New System.ComponentModel.BackgroundWorker
-        Me.BGOI_G4P = New System.ComponentModel.BackgroundWorker
-        Me.BGOI_G4P_Imp = New System.ComponentModel.BackgroundWorker
-        Me.BGOI_GBP_Imp = New System.ComponentModel.BackgroundWorker
-        Me.BGOI_L7P_Imp = New System.ComponentModel.BackgroundWorker
-        Me.BGOI_L6P_Imp = New System.ComponentModel.BackgroundWorker
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip
         Me.lblStatus = New System.Windows.Forms.ToolStripStatusLabel
         Me.lblBGW = New System.Windows.Forms.ToolStripStatusLabel
@@ -44,38 +36,6 @@ Partial Class Form1
         Me.StatusStrip1.SuspendLayout()
         CType(Me.BS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'BGOI_GBP
-        '
-        Me.BGOI_GBP.WorkerReportsProgress = True
-        '
-        'BGOI_L7P
-        '
-        Me.BGOI_L7P.WorkerReportsProgress = True
-        '
-        'BGOI_L6P
-        '
-        Me.BGOI_L6P.WorkerReportsProgress = True
-        '
-        'BGOI_G4P
-        '
-        Me.BGOI_G4P.WorkerReportsProgress = True
-        '
-        'BGOI_G4P_Imp
-        '
-        Me.BGOI_G4P_Imp.WorkerReportsProgress = True
-        '
-        'BGOI_GBP_Imp
-        '
-        Me.BGOI_GBP_Imp.WorkerReportsProgress = True
-        '
-        'BGOI_L7P_Imp
-        '
-        Me.BGOI_L7P_Imp.WorkerReportsProgress = True
-        '
-        'BGOI_L6P_Imp
-        '
-        Me.BGOI_L6P_Imp.WorkerReportsProgress = True
         '
         'StatusStrip1
         '
@@ -161,14 +121,6 @@ Partial Class Form1
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents BGOI_GBP As System.ComponentModel.BackgroundWorker
-    Friend WithEvents BGOI_L7P As System.ComponentModel.BackgroundWorker
-    Friend WithEvents BGOI_L6P As System.ComponentModel.BackgroundWorker
-    Friend WithEvents BGOI_G4P As System.ComponentModel.BackgroundWorker
-    Friend WithEvents BGOI_G4P_Imp As System.ComponentModel.BackgroundWorker
-    Friend WithEvents BGOI_GBP_Imp As System.ComponentModel.BackgroundWorker
-    Friend WithEvents BGOI_L7P_Imp As System.ComponentModel.BackgroundWorker
-    Friend WithEvents BGOI_L6P_Imp As System.ComponentModel.BackgroundWorker
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents lblStatus As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents pgrWorking As System.Windows.Forms.ProgressBar

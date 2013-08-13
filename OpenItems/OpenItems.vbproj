@@ -39,11 +39,11 @@
   <ItemGroup>
     <Reference Include="OAConnection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\OA Tool\OA Tool\bin\Debug\OAConnection.dll</HintPath>
+      <HintPath>..\..\LA_Tool\OA Tool\bin\Debug\OAConnection.dll</HintPath>
     </Reference>
-    <Reference Include="SAPCOM, Version=1.0.1123.745, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="SAPCOM, Version=1.0.624.1032, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\..\Desarrollos\Dependencias\SAPCOM.dll</HintPath>
+      <HintPath>..\..\LA_Tool\OA Tool\bin\Debug\SAPCOM.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

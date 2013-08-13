@@ -65,15 +65,15 @@ Public Class Form1
         End If
 
         'Actualización de los vendors en la tabla VendorsG11.
-        Dim CD As New SAPCOM.ConnectionData
-        CD.Box = "G4P"
-        CD.Login = "Type your TNumber here"
-        CD.Password = "Type your G4P Password here"
-        CD.SSO = False
+        'Dim CD As New SAPCOM.ConnectionData
+        'CD.Box = "G4P"
+        'CD.Login = "Type your TNumber here"
+        'CD.Password = "Type your G4P Password here"
+        'CD.SSO = False
 
 
-        'Dim Vn As New SAPCOM.LFA1_Report("G4P", "BM4691", "LAT")
-        Dim Vn As New SAPCOM.LFA1_Report(CD)
+        Dim Vn As New SAPCOM.LFA1_Report("G4P", "CF9019", "LAT")
+        'Dim Vn As New SAPCOM.LFA1_Report(CD)
         Dim NV As New DataTable 'New vendors
 
         NV = cn.RunSentence("Select * From vst_New_Vendors").Tables(0)
@@ -241,20 +241,24 @@ Public Class Form1
         MSG("Start: [" & Now.ToString & "]")
         'lstStatus.Items.Add("Start: [" & Now.ToString & "]")
 
-        Dim dtPlants As New OAConnection.SQLInstruction(eSQLInstruction.Select)
-        dtPlants.Tabla = "SC_Plant"
-        dtPlants.AgregarParametro(New SQLInstrucParam("Plant_Code", "", False))
-        dtPlants.Execute()
+        'Dim dtPlants As New OAConnection.SQLInstruction(eSQLInstruction.Select)
+        'dtPlants.Tabla = "SC_Plant"
+        'dtPlants.AgregarParametro(New SQLInstrucParam("Plant_Code", "", False))
+        'dtPlants.Execute()
 
         Dim CD As New SAPCOM.ConnectionData
-        
+        Dim cn As New OAConnection.Connection
 
-        For Each row As DataRow In dtPlants.Data.Rows
+        Dim P As New DataTable
+
+        P = cn.RunSentence("Select * From SC_Plant").Tables(0)
+
+        For Each row As DataRow In P.Rows
             Dim WL7 As New OpenOrderWorker
 
             CD.Box = "L7P"
-            CD.Login = "Type your T-Number here"
-            CD.Password = "Type your password here for L7P System"
+            CD.Login = "CF9019"
+            CD.Password = "qwer1988"
             CD.SSO = False
 
             WL7.SAPConnectionData = CD
@@ -265,8 +269,8 @@ Public Class Form1
 
             Dim WL6 As New OpenOrderWorker
             CD.Box = "L6P"
-            CD.Login = "Type your T-Number here"
-            CD.Password = "Type your password here for L6P System"
+            CD.Login = "CF9019"
+            CD.Password = "qwer1988"
             CD.SSO = False
 
             WL6.SAPConnectionData = CD
@@ -277,8 +281,8 @@ Public Class Form1
 
             Dim WG4 As New OpenOrderWorker
             CD.Box = "G4P"
-            CD.Login = "Type your T-Number here"
-            CD.Password = "Type your password here for G4P System"
+            CD.Login = "CF9019"
+            CD.Password = "qwer1988"
             CD.SSO = False
 
             WG4.SAPConnectionData = CD
@@ -289,8 +293,8 @@ Public Class Form1
 
             Dim WBG As New OpenOrderWorker
             CD.Box = "GBP"
-            CD.Login = "Type your T-Number here"
-            CD.Password = "Type your password here for GBP System"
+            CD.Login = "CF9019"
+            CD.Password = "qwer1988"
             CD.SSO = False
 
             WBG.SAPConnectionData = CD
@@ -398,9 +402,9 @@ Public Class OpenOrderWorker
 The_Process:
         Dim C As New Object
 
-        'C = SC.GetSAPConnection(_SAPBox, "BM4691", "LAT")
-        _CD.Box = _SAPBox
-        C = SC.GetSAPConnection(_CD)
+        C = SC.GetSAPConnection(_SAPBox, "CF9019", "LAT")
+        '_CD.Box = _SAPBox
+        'C = SC.GetSAPConnection(_CD)
 
         Dim POs As New DataTable
          Dim GetConfirmation As Boolean
@@ -459,7 +463,7 @@ The_Process:
 
                 TN.ColumnName = "Usuario"
                 TN.Caption = "Usuario"
-                TN.DefaultValue = "BM4691"
+                TN.DefaultValue = "CF9019"
 
                 SB.DefaultValue = _SAPBox
                 SB.ColumnName = "SAPBox"
@@ -791,15 +795,14 @@ Public Class Manager
         End If
 
         'Actualización de los vendors en la tabla VendorsG11.
+        'Dim CD As New SAPCOM.ConnectionData
+        'CD.Box = "G4P"
+        'CD.Login = "CF9019"
+        'CD.Password = "Type your G4P Password here"
+        'CD.SSO = False
 
-        Dim CD As New SAPCOM.ConnectionData
-        CD.Box = "G4P"
-        CD.Login = "Type your TNumber here"
-        CD.Password = "Type your G4P Password here"
-        CD.SSO = False
-
-        'Dim Vn As New SAPCOM.LFA1_Report("G4P", "BM4691", "LAT")
-        Dim Vn As New SAPCOM.LFA1_Report(CD)
+        Dim Vn As New SAPCOM.LFA1_Report("G4P", "CF9019", "LAT")
+        ' Dim Vn As New SAPCOM.LFA1_Report(CD)
         Dim NV As New DataTable 'New vendors
 
         NV = cn.RunSentence("Select * From vst_New_Vendors").Tables(0)
